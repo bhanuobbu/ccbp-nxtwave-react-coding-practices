@@ -1,1 +1,12 @@
+-----------------SQL QUESTIONS----------------
 
+1) -- Write a query to calculate running (Cumulative) sales amount by date
+   -- for each month using the sales table, showing order date, amount, 
+   -- and the running total of sales.
+ANS)
+SELECT 
+      Order_date,
+      amount,
+      SUM (amount) OVER (ORDER BY order_date)
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
+           
